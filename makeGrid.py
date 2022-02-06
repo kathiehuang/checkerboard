@@ -11,6 +11,18 @@ practiceInput = np.array([[1,0,1,0,1,0],
 # takes in 6x6 numpy array, returns array for now 
 
 def makeGrid(arr):
+
+    #add black border 
+    arr = np.insert(arr, 0, [0,0,0,0,0,0], axis = 0)
+    arr = np.insert(arr, len(arr), [0,0,0,0,0,0], axis = 0)
+    arr = np.insert(arr, 0, 0, axis = 1)
+    arr = np.insert(arr, len(arr[0]), 0, axis = 1)
+
+    #add white border 
+    arr = np.insert(arr, 0, [1,1,1,1,1,1,1,1], axis = 0)
+    arr = np.insert(arr, len(arr), [1,1,1,1,1,1,1,1], axis = 0)
+    arr = np.insert(arr, 0, 1, axis = 1)
+    arr = np.insert(arr, len(arr[0]), 1, axis = 1)
     plt.figure(figsize=(5,5))
     plt.imshow(arr.squeeze(), cmap = 'gray')
     plt.axis(False)
@@ -18,17 +30,7 @@ def makeGrid(arr):
     plt.show()
     return 'apriltag.png'
 
-#add black border 
-practiceInput = np.insert(practiceInput, 0, [0,0,0,0,0,0], axis = 0)
-practiceInput = np.insert(practiceInput, len(practiceInput), [0,0,0,0,0,0], axis = 0)
-practiceInput = np.insert(practiceInput, 0, 0, axis = 1)
-practiceInput = np.insert(practiceInput, len(practiceInput[0]), 0, axis = 1)
 
-#add white border 
-practiceInput = np.insert(practiceInput, 0, [1,1,1,1,1,1,1,1], axis = 0)
-practiceInput = np.insert(practiceInput, len(practiceInput), [1,1,1,1,1,1,1,1], axis = 0)
-practiceInput = np.insert(practiceInput, 0, 1, axis = 1)
-practiceInput = np.insert(practiceInput, len(practiceInput[0]), 1, axis = 1)
 
 #print(practiceInput)
 makeGrid(practiceInput)
