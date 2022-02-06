@@ -8,7 +8,7 @@ practiceInput = np.array([[1,0,1,0,1,0],
                           [1,0,0,0,0,1],
                           [1,0,0,1,1,1]])
 
-# takes in 6x6 numpy array, returns array for now 
+# takes in 6x6 numpy array, returns img filename 
 
 def makeGrid(arr):
 
@@ -33,5 +33,5 @@ def makeGrid(arr):
 
 
 #print(practiceInput)
-makeGrid(practiceInput)
+#makeGrid(practiceInput)
 
